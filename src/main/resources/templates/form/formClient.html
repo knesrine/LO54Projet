@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+layout:decorator="layout">
+<head>
+<meta charset="utf-8"/>
+
+<title>Ajouter Tache</title>
+
+</head>
+<body>
+	<div layout:fragment="content">
+		<div class="container">
+			<div class="panel panel-default">
+				<div class="panel-heading">Création d'un client</div>
+				<div class="panel-body">
+				<form th:action="@{addTache}" method="post" enctype="multipart/form-data" th:object="${tache}">
+					<div class="form-group">
+						<label class="control-label">Nom de tache :</label>
+						<input class="form-control" type="text" name="nom" required="required"/>
+					</div>
+					
+					<div class="form-group">
+					<label class="control-label">Ressource :</label>
+					<select th:field="*{personnel}" class="form-control"> <!-- on pointe sur le bean site qui provient du getter -->
+			       		<option th:each="e: ${employe}" th:value="${e.id}" th:text="${e.nom}"></option> <!-- sites provient du controlleur modeladdattribute -->
+					</select>
+					</div>
+						
+					<div class="form-group">
+								<label class="control-label"><span class="glyphicon glyphicon-lock"></span> Charger le rapport :</label>
+           						<input type="file" name="file" multiple="multiple" required="required"/>
+					</div>
+							
+					<div class="form-group">
+						<input class="form-control" th:object="${projet}" type="hidden" name="projet" th:value="${projet.id}"/>
+					</div>
+					
+					<div><button type="submit" onclick="alert('Projet ajouté avec succès')" class="btn btn-primary">Save</button></div>
+					
+				</form>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+</body>
+</html>
