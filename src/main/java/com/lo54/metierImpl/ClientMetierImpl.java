@@ -16,20 +16,10 @@ public class ClientMetierImpl implements ClientMetier {
 	private ClientRepository clientRepository;
 
 	@Override
-	public Client saveClient(Client client) {
+	public Client addClient(Client client) {
 		return clientRepository.save(client);
 	}
 
-	@Override
-	public void updateClient(Client client) {
-		saveClient(client);
-		
-	}
-
-	@Override
-	public void deleteClient(Client client) {
-		clientRepository.delete(client);
-	}
 
 	@Override
 	public List<Client> listClient() {

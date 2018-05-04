@@ -58,8 +58,25 @@ public class Client implements Serializable {
 		// TODO Auto-generated constructor stub
 	}
 	
+	
 		
 	
+	public Client(@NotNull @Size(min = 1, max = 40) String lastName,
+			@NotNull @Size(min = 1, max = 40) String firstName, @NotNull @Size(min = 1, max = 120) String address,
+			@NotNull @Size(min = 1, max = 20) String phone, @Size(min = 1, max = 40) String email) {
+		super();
+		this.lastName = lastName;
+		this.firstName = firstName;
+		this.address = address;
+		this.phone = phone;
+		this.email = email;
+	}
+	
+	
+
+
+
+
 	public Client(@NotNull @Size(min = 1, max = 40) String lastName, @NotNull @Size(min = 1, max = 40) String firstName,
 			@NotNull @Size(min = 1, max = 120) String address, @NotNull @Size(min = 1, max = 20) String phone,
 			@Size(min = 1, max = 40) String email, CourseSession courseSession) {
@@ -71,6 +88,7 @@ public class Client implements Serializable {
 		this.email = email;
 		this.courseSession = courseSession;
 	}
+	
 
 
 	//Getters & Setters

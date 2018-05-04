@@ -5,6 +5,7 @@ import java.util.Collection;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.validation.constraints.NotNull;
@@ -23,7 +24,7 @@ public class Course implements Serializable {
 	@Column(name="TITLE")
 	private String title;
 	
-	@OneToMany(mappedBy="course")
+	@OneToMany(mappedBy="course",fetch=FetchType.LAZY)
 	private Collection<CourseSession> courseSessions;
 	
 	

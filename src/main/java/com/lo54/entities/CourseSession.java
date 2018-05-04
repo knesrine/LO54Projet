@@ -6,6 +6,7 @@ import java.util.Collection;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -41,7 +42,7 @@ public class CourseSession implements Serializable {
 	@Column(name="MAX")
 	private int max;
 
-	@OneToMany(mappedBy="courseSession")
+	@OneToMany(mappedBy="courseSession",fetch=FetchType.LAZY)
 	private Collection<Client> clients;
 	
 	@ManyToOne
@@ -71,10 +72,12 @@ public class CourseSession implements Serializable {
 		this.course = course;
 		this.location = location;
 	}
+	
 
-
-
-
+	public CourseSession(int id) {
+		super();
+		this.id = id;
+	}
 
 	//Getters & Setters
 	public int getId() {
@@ -115,6 +118,22 @@ public class CourseSession implements Serializable {
 
 	public void setClients(Collection<Client> clients) {
 		this.clients = clients;
+	}
+
+	public Course getCourse() {
+		return course;
+	}
+
+	public void setCourse(Course course) {
+		this.course = course;
+	}
+
+	public Location getLocation() {
+		return location;
+	}
+
+	public void setLocation(Location location) {
+		this.location = location;
 	}
 
 	

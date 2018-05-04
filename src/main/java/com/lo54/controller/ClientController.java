@@ -27,7 +27,7 @@ public class ClientController {
 	//Ajouter client après remplissage formulaire
 	@RequestMapping(method=RequestMethod.POST,value="/Client/add")
 	public String addClient(Model model,@ModelAttribute("client") Client client) {
-		clientMetier.saveClient(client);
+		clientMetier.addClient(client);
 		return "redirect:listClient" ;
 	}
 	

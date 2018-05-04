@@ -9,11 +9,12 @@ import org.springframework.data.repository.query.Param;
 
 import com.lo54.entities.Course;
 
-public interface CourseRepository extends JpaRepository<Course, Long> {
-	public List<Course> findByTitle(String title);
+public interface CourseRepository extends JpaRepository<Course, String> {
+	@Query("select cr from Course cr where cr.title like :x")
+	public List<Course> findByTitle(@Param("x")String title);
 	
-	@Query ("select cr from course cr where cr.code in ( select cs.code from courseSession cs where  d in cs.startDate and cs.endDate ")
-	public List<Course> searchByDate(@Param("d")Date date);
+	//@Query ("select cr from course cr where cr.code in ( select cs.code from courseSession cs where  d in cs.startDate and cs.endDate ")
+	//public List<Course> searchByDate(@Param("d")Date date);
 	
 	
 }
