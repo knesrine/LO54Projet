@@ -63,12 +63,12 @@ public class Lo54ProjetApplication extends SpringBootServletInitializer implemen
 	
 	@Override
 	public void run(String... args) {
-		List<CourseSession> x = courseSessionRepository.findByDate(LocalDate.of(2018, Month.MAY,11));
+		/*List<CourseSession> x = courseSessionRepository.findByDate(LocalDate.of(2018, Month.MAY,11));
 		for (CourseSession cs:x)
 			System.out.println(cs.getCourse().getTitle());
 		List<CourseSession> y = courseSessionRepository.findByCity("Belfort");
 		for (CourseSession cs:y)
-			System.out.println(cs.getCourse().getTitle());
+			System.out.println(cs.getCourse().getTitle());*/
 		
 		
 		

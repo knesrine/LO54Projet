@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{fragments/main_layout}">
+<head>
+<title>Index Page</title>
+</head>
+<body>
+
+	<div layout:fragment="content" class="container mySpace">
+		<div class="row">
+		<div class="col-md-3">
+		<form action="/lo54Formation/listCourseSession" class="form-inline" name="dropDownCities">
+	        <i style="color:#343a40; padding-right:10px;font-size: 25px;" class="fas fa-thumbtack"></i>
+	        <div class="form-group mb-2">
+	         <select class="form-control" style="height:calc(2.25rem + 17px); width:100px;" name="city" id="cityName" onchange="document.dropDownCities.submit()">
+		    	<option value="%">All</option>	
+			  	<option th:each="ville:${listelocation}" th:text="${ville.city}"></option>
+				
+			</select>
+	        </div>
+	     </form>
+	     </div>
+	     <div class="col-md-3">
+	     <form action="/lo54Formation/listCourseSession" class="form-inline" name="filterByDate">
+	     	<i style="color:#343a40; padding-right:10px;font-size: 25px;" class="far fa-calendar-alt"></i>
+	        <div class="form-group mb-2">
+	         <input type="date" id="datepicker" width="200" class="form-control" name="date" onchange="document.filterByDate.submit()" placeholder="" />
+	        </div>
+	     </form>
+	     </div>
+	     </div>
+	    <script>
+        $('#datepicker').datepicker({
+            uiLibrary: 'bootstrap4',format: 'dd-mm-yyyy'
+        });
+    	</script>
+		<div class="card">
+			<div class="card card-body">
+				<table class="table table-hover">
+					<thead>
+						<tr>
+						  <th>ID</th>
+				          <th>StartDate</th>
+				          <th>End Date</th>
+				          <th>Max</th>
+				          <th>Course</th>
+				          <th>Location</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="coursesession:${coursesessions}">
+							<td th:text="${coursesession.id}"></td>
+							<td th:text="${coursesession.startDate}"></td>
+							<td th:text="${coursesession.endDate}"></td>
+							<td th:text="${coursesession.max}"></td>
+							<td th:text="${coursesession.course.title}"></td>
+							<td th:text="${coursesession.location.city}"></td>
+							<td><button type="button" class="btn btn-dark" style="color:white; cursor:pointer">S'inscrire</button></td>
+						</tr>
+					</tbody>
+
+				</table>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

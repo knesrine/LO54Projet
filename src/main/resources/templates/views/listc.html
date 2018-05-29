@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{fragments/main_layout}">
+<head>
+<title>Index Page</title>
+</head>
+<body>
+
+	<div layout:fragment="content" class="container mySpace">
+	     <form action="/lo54Formation/listCourse" class="form-inline">
+	        <div class="form-group mb-2">
+	         <input type="text" class="form-control" name="name" placeholder="Search Title" />
+	         <input type="submit" value="Search"  class="btn btn-primary"/>
+	        </div>
+	     </form>
+		<div class="card">
+			<div class="card card-body">
+				<table class="table table-hover">
+					<thead>
+						<tr>
+						  <th></th>	
+						  <th>Code</th>
+				          <th>Title</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="course:${courses}">
+							<td><i style="color:#343a40;font-size: 25px;" class="fas fa-book"></i></td>
+							<td th:text="${course.code}"></td>
+							<td th:text="${course.title}"></td>
+						</tr>
+					</tbody>
+
+				</table>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

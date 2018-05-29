@@ -20,7 +20,7 @@ public class CourseMetierImpl implements CourseMetier{
 	
 	@Override
 	public List<Course> SearchByTitle(String title) {
-		return courseRepository.findByTitle(title);
+		return courseRepository.findByTitle("%"+title+"%");
 	}
 
 	
