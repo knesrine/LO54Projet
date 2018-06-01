@@ -56,7 +56,7 @@
 							<td th:text="${coursesession.max}"></td>
 							<td th:text="${coursesession.course.title}"></td>
 							<td th:text="${coursesession.location.city}"></td>
-							<td><button type="button" class="btn btn-dark" style="color:white; cursor:pointer">S'inscrire</button></td>
+							<td><a type="button" class="btn btn-dark" th:href="@{/register(idcourseSession=${coursesession.id})}" style="color:white; cursor:pointer">S'inscrire</a></td>
 						</tr>
 					</tbody>
 
