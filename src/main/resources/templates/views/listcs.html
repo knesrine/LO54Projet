@@ -41,8 +41,9 @@
 					<thead>
 						<tr>
 						  <th>ID</th>
-				          <th>StartDate</th>
+				          <th>Start Date</th>
 				          <th>End Date</th>
+				          <th>Number of Participants</th>
 				          <th>Max</th>
 				          <th>Course</th>
 				          <th>Location</th>
@@ -53,6 +54,7 @@
 							<td th:text="${coursesession.id}"></td>
 							<td th:text="${coursesession.startDate}"></td>
 							<td th:text="${coursesession.endDate}"></td>
+							<td th:text="${@courseSessionRepository.sumClient(coursesession.id)}+'/'+${coursesession.max}"></td>
 							<td th:text="${coursesession.max}"></td>
 							<td th:text="${coursesession.course.title}"></td>
 							<td th:text="${coursesession.location.city}"></td>

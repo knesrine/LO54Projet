@@ -47,8 +47,8 @@ public class Lo54ProjetApplication extends SpringBootServletInitializer implemen
 	public static void main(String[] args) {
 		
 		SpringApplication.run(Lo54ProjetApplication.class, args);
-	/*	ConfigurableApplicationContext ctx=SpringApplication.run(Lo54ProjetApplication.class, args);
-		CourseMetier courseMetier=ctx.getBean(CourseMetier.class);
+		/*ConfigurableApplicationContext ctx=SpringApplication.run(Lo54ProjetApplication.class, args);*/
+		/*CourseMetier courseMetier=ctx.getBean(CourseMetier.class);
 		List<Course> courses=courseMetier.SearchByTitle("Math");
 		for(Course c:courses)
 			System.out.println(c.getCode());
@@ -75,6 +75,7 @@ public class Lo54ProjetApplication extends SpringBootServletInitializer implemen
 //		Client cl = new Client("test", "test", "test", "0760606060", "test@test.com", new CourseSession(1));
 //		clientRepository.save(cl);
 		
+		System.out.println(courseSessionRepository.sumClient(1));
 	}
 	
 }

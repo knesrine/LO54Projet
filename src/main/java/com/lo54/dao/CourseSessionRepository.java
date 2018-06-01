@@ -15,5 +15,7 @@ public interface CourseSessionRepository extends JpaRepository <CourseSession ,I
 	public List<CourseSession> findByDate(@Param("d")LocalDate date);
 	@Query("select crs from Location lo join lo.courseSessions crs where lo.city like :c")
 	public List<CourseSession> findByCity(@Param("c")String city);
+	@Query("select count(c) from Client c join c.courseSession where c.courseSession.id = :idCourseSession")
+	public int sumClient(@Param("idCourseSession")int idCourseSession);
 	
 }
