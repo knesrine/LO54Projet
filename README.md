@@ -1,4 +1,4 @@
-# Project Title
+# Course LO54
 
 LO54 Project
 
