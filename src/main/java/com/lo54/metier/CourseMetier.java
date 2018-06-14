@@ -1,6 +1,5 @@
 package com.lo54.metier;
 
-import java.util.Date;
 import java.util.List;
 
 import com.lo54.entities.Course;

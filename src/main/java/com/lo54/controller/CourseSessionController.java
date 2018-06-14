@@ -1,7 +1,6 @@
 package com.lo54.controller;
 
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
@@ -24,7 +23,6 @@ import com.lo54.metier.ClientMetier;
 import com.lo54.metier.CourseSessionMetier;
 import com.lo54.metier.LocationMetier;
 
-import ch.qos.logback.core.net.SyslogOutputStream;
 
 @Controller
 public class CourseSessionController {

@@ -1,7 +1,6 @@
 package com.lo54.metierImpl;
 
 import java.time.LocalDate;
-import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,7 +8,6 @@ import org.springframework.stereotype.Service;
 
 import com.lo54.dao.CourseSessionRepository;
 import com.lo54.entities.CourseSession;
-import com.lo54.entities.Location;
 import com.lo54.metier.CourseSessionMetier;
 
 @Service
